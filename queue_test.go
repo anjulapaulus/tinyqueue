@@ -14,13 +14,21 @@ func TestQueue_Push(t *testing.T) {
 
 	q := Queue{}
 	q.Push(IntVal(7))
-	q.Push(IntVal(5))
 	q.Push(IntVal(10))
+	q.Push(IntVal(5))
 
 	if q.Len() != 3{
 		t.Fatal("Push Test : Failed")
 	}
+}
+func TestQueue_PushNil(t *testing.T) {
 
+	q := Queue{}
+	q.Push(nil)
+
+	if q.Len() != 0{
+		t.Fatal("Push Test : Failed")
+	}
 }
 
 func TestQueue_Pop(t *testing.T) {
@@ -33,6 +41,13 @@ func TestQueue_Pop(t *testing.T) {
 		t.Fatal("Pop Test : Failed")
 	}
 }
+func TestQueue_PopNil(t *testing.T) {
+	q := Queue{}
+	if q.Pop() != nil {
+		t.Fatal("Pop Test : Failed")
+	}
+}
+
 
 func TestQueue_Len(t *testing.T) {
 	q := Queue{}
@@ -57,24 +72,16 @@ func TestQueue_All(t *testing.T) {
 	}
 }
 
-func TestQueue_PeekMin(t *testing.T) {
+func TestQueue_Peek(t *testing.T) {
 	q := Queue{}
+	q.Push(IntVal(10))
 	q.Push(IntVal(7))
 	q.Push(IntVal(5))
-	q.Push(IntVal(10))
 
-	if q.PeekMin() != IntVal(5) {
+
+	if q.Peek() != IntVal(5) {
 		t.Fatal("PeekMin Test: Failed")
 	}
 }
 
-func TestQueue_PeekMax(t *testing.T) {
-	q := Queue{}
-	q.Push(IntVal(7))
-	q.Push(IntVal(5))
-	q.Push(IntVal(10))
 
-	if q.PeekMax() != IntVal(10) {
-		t.Fatal("PeekMax Test: Failed")
-	}
-}

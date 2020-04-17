@@ -13,13 +13,10 @@ func (q *Queue) Len () int{
 	return q.length
 }
 
-func (q *Queue) PeekMin () Item{
+func (q *Queue) Peek() Item{
 	return q.data[0]
 }
 
-func (q *Queue) PeekMax () Item{
-	return q.data[q.length-1]
-}
 
 func (q *Queue) All() []Item{
 	return q.data

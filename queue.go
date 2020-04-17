@@ -6,7 +6,7 @@ type Queue struct {
 }
 
 type Item interface {
-	Compare(Item) bool
+	Compare(b Item) bool
 }
 
 func (q *Queue) Len () int{

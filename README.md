@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/anjulapaulus/tinyqueue.svg?branch=master)](https://travis-ci.com/anjulapaulus/tinyqueue)
+[![codecov](https://codecov.io/gh/anjulapaulus/tinyqueue/branch/master/graph/badge.svg)](https://codecov.io/gh/anjulapaulus/config)
+[![HitCount](http://hits.dwyl.com/anjulapaulus/tinyqueue.svg)](http://hits.dwyl.com/anjulapaulus/tinyqueue)
 # tinyqueue
 
 A simple and smallest binary heap priority queue in golang.
